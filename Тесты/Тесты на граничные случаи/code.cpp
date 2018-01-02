@@ -10,7 +10,7 @@
 
 using namespace std;
 
-#define ERROR  { out << "Некорректный тест"; goto DA_ETO_METKA ; }
+#define ERROR  { out << "Incorrect test"; goto DA_ETO_METKA ; }
 
 
 
