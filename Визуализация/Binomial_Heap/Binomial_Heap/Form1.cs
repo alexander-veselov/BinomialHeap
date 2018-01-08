@@ -772,6 +772,11 @@ namespace Binomial_Heap
         {
             int n = textBox1.Text.Length;
             String s = textBox1.Text;
+            if (s.Length >= 10)
+            {
+                error();
+                return false;
+            }
             for (int i=0; i<n; i++)
             {
                 if (s[i]=='-' && i!=0)
