@@ -688,7 +688,7 @@ namespace Binomial_Heap
             public static KeyValuePair<int, int>[] a;
             public static int c = 2;
             public static Random r;
-            public static int delay = 0;
+            public static int delay = 500;
             public static Font font = new Font("TimesNewRoman", 12);
         };
 
@@ -1018,7 +1018,7 @@ namespace Binomial_Heap
 
         private void trackBar1_Scroll(object sender, EventArgs e)
         {
-            Utils.delay = trackBar1.Value * 100;
+            Utils.delay = (10-trackBar1.Value) * 100;
             label6.Text = "Hints: вы можете менять скорость анимации.";
             //Graphics g = Graphics.FromImage(pictureBox1.Image);
             //g.DrawImage(pictureBox1.Image, new Point(140, 200));
