@@ -303,6 +303,8 @@ bool check(string s)
     return true;
 }
 
+
+
 void menu()
 {
     system("cls");
@@ -313,6 +315,7 @@ void menu()
     cout << "4 - Добавить в кучу N случайных элементов\n";
     cout << "5 - Вывод кучи на экран\n";
     string s;
+    static int count = 0;
     cin >> s;
     if (!check(s))
     {
@@ -340,6 +343,14 @@ void menu()
     }
     case 1:
     {
+        if (count > 1000)
+        {
+            cout << "В куче больше 1000 элементов. Удалите парочку\n";
+            cout << "\nНажмите любую клавишу.\n";
+            _getch();
+            menu();
+            return;
+        }
         cout << "Введите число для вставки: \n";
         string s;
         cin >> s;
@@ -353,6 +364,7 @@ void menu()
         }
         int a = atoi(s.c_str());
         h->insert(a);
+        count++;
         break;
     }
     case 2:
@@ -368,6 +380,7 @@ void menu()
         cout << "Извлеченный минимум: ";
         cout << h->extract_min() << endl;
         cout << endl;
+        count--;
         break;
     }
     case 3:
@@ -387,6 +400,14 @@ void menu()
     }
     case 4:
     {
+        if (count > 1000)
+        {
+            cout << "В куче больше 1000 элементов. Удалите парочку\n";
+            cout << "\nНажмите любую клавишу.\n";
+            _getch();
+            menu();
+            return;
+        }
         cout << "Введите N: ";
         string s;
         cin >> s;
@@ -407,10 +428,19 @@ void menu()
             menu();
             return;
         }
+        if (a > 1000)
+        {
+            cout << "Введите число меньше 1000\n";
+            cout << "\nНажмите любую клавишу.\n";
+            _getch();
+            menu();
+            return;
+        }
         for (int i = 0; i < a; i++)
         {
             h->insert(rand() % 5000 - 1000);
         }
+        count += a;
         cout << endl;
         break;
     }
