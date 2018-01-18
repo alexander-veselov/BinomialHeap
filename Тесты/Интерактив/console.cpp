@@ -291,7 +291,7 @@ heap *h = new heap();
 
 bool check(string s)
 {
-
+    if (s.length() >= 10) return false;
     for (int i = 0; i < s.length(); i++)
     {
         if (!isdigit(s[i]))
