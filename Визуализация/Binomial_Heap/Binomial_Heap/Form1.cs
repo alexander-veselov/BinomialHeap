@@ -810,6 +810,7 @@ namespace Binomial_Heap
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            this.WindowState = FormWindowState.Maximized;
             Utils.init();
             pictureBox1.Image = new Bitmap(1200, 570);
             v = new version(ref pictureBox1, ref label3);
@@ -945,7 +946,7 @@ namespace Binomial_Heap
             {
                 button4.Enabled = true;
                 button5.Enabled = true;
-                int mouseX = Cursor.Position.X - this.Location.X - 50;
+                int mouseX = Cursor.Position.X - this.Location.X -200;
                 int mouseY = Cursor.Position.Y - this.Location.Y - 65;
                 h.findNode(mouseX, mouseY);
             }
