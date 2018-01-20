@@ -996,6 +996,8 @@ namespace Binomial_Heap
             button3.Enabled = false;
             button4.Enabled = false;
             button5.Enabled = false;
+            button8.Enabled = false;
+            button9.Enabled = false;
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -1010,7 +1012,10 @@ namespace Binomial_Heap
                 {
                     button2.Enabled = true;
                     button3.Enabled = true;
+                    
                 }
+                button8.Enabled = true;
+                button9.Enabled = true;
 
             }
 
@@ -1035,7 +1040,7 @@ namespace Binomial_Heap
             button1_Click(sender, e);
             Utils.delay = 800;
             button1_Click(sender, e);
-            Utils.delay = trackBar1.Value * 100;
+            Utils.delay = (10 - trackBar1.Value) * 100;
             button5.Enabled = false;
         }
 
@@ -1063,7 +1068,7 @@ namespace Binomial_Heap
             
             Utils.delay = 800;
             button3_Click(sender, e);
-            Utils.delay = trackBar1.Value * 100;
+            Utils.delay = (10 - trackBar1.Value) * 100;
             button5.Enabled = false;
         }
     }
